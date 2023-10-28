@@ -122,3 +122,63 @@ tr:nth-child(even) {
 .white-text {
     color: #fff; /* White color */
 }
+/* Form styling */
+.review-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    background-color: #f9f9f9;
+}
+
+.review-form label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.review-form input[type="text"],
+.review-form input[type="number"],
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Excluding semester dropdown from yellowish background */
+.review-form input[type="text"]:focus,
+.review-form input[type="number"]:focus,
+.review-form textarea:focus,
+.review-form input[type="text"]:valid,
+.review-form input[type="number"]:valid,
+.review-form textarea:valid {
+    background-color: #FFFFE0; /* Light yellow color */
+    border-color: #FFD700; /* Gold color for border */
+}
+
+.review-form textarea {
+    resize: vertical;
+}
+
+.review-form button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #007BFF; /* Blue color */
+    color: #fff; /* White color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.review-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
