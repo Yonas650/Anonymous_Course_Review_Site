@@ -1,4 +1,124 @@
+/* General Styles */
 body {
-	font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
 }
 
+#container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+}
+thead th {
+    background-color: #007BFF; /* Blue color */
+    color: #fff; /* White text color for better contrast */
+}
+header {
+    background-color: #2e2e2e;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+	margin-bottom: 20px;  /* Added margin to create space */
+}
+
+h1 span {
+    font-size: 1.5em;
+}
+
+h3 {
+    margin-top: 10px;
+}
+
+nav {
+    width: 20%;
+    float: left;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 15px;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: #e5e5e5;
+    border-radius: 4px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #d0d0d0;
+}
+
+.about-session {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+#content {
+    width: 75%;
+    float: left;
+    padding: 0 20px;
+    border-left: 1px solid #e5e5e5;
+}
+
+.filters {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filters label, .filters select, .filters input, .filters button {
+    margin-bottom: 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* Clear floats after content */
+#container::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.blue-text {
+    color: #007BFF; /* Blue color */
+}
+
+.white-text {
+    color: #fff; /* White color */
+}
