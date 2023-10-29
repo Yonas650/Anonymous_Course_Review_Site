@@ -1,6 +1,6 @@
 import './config.mjs';
 import express from 'express';
-
+import session from 'express-session'; 
 const app = express();
 import './db.mjs';
 import mongoose from 'mongoose';
@@ -19,6 +19,28 @@ app.set('view engine', 'hbs');
 
 // body parser (req.body)
 app.use(express.urlencoded({ extended: false }));
+
+// Initialize session middleware
+app.use(session({
+    secret: 'your-secret-key',
+    resave: false,
+    saveUninitialized: true
+  }));
+  // Middleware to count page visits
+app.use((req, res, next) => {
+    // If the session doesn't have a counter, initialize it
+    if(!req.session.pageCount) {
+      req.session.pageCount = 0;
+    }
+    // Increment the counter
+    req.session.pageCount++;
+  
+    // Make the counter available to all templates
+    res.locals.count = req.session.pageCount;
+  
+    next();
+  });
+
 
 app.get('/', (req, res) => {
   let query = {};
