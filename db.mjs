@@ -12,6 +12,7 @@ const Review= new mongoose.Schema({
     semester: String,
     year: Number,
     professor: String,
-    review: String
+    review: String,
+    sessionId: String 
 });
 mongoose.model('Review', Review);

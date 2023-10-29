@@ -78,7 +78,8 @@ app.post('/reviews/add', (req, res) => {
         semester,
         year,
         professor,
-        review
+        review,
+        sessionId: req.session.id
     });
 
     newReview.save()
@@ -88,6 +89,16 @@ app.post('/reviews/add', (req, res) => {
         .catch(err => {
             console.error("Failed to save review:", err);
             res.status(500).send("Error occurred while saving review.");
+        });
+});
+app.get('/reviews/mine', (req, res) => {
+    Review.find({ sessionId: req.session.id })
+        .then(reviews => {
+            res.render('reviewsMine', { reviews });  
+        })
+        .catch(err => {
+            console.error("Failed to retrieve reviews:", err);
+            res.status(500).send("Error occurred while fetching reviews.");
         });
 });
 
